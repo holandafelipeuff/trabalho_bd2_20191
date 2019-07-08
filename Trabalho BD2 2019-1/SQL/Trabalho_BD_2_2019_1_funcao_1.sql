@@ -10,6 +10,3 @@ CREATE OR REPLACE FUNCTION badlanguage() RETURNS VOID AS $$
 		END LOOP;
 	END;
 	$$ LANGUAGE plpgsql;
-	
-		 
-SELECT badlanguage();
