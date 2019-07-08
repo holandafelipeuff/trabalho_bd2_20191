@@ -1,4 +1,4 @@
-﻿create or replace function maior_idade_function() returns trigger as $$
+create or replace function maior_idade_compra() returns trigger as $$
 declare
 	categoria_cursor REFCURSOR;
 	jogo_categoria_row jogo_pertence_categoria%ROWTYPE;
@@ -29,7 +29,4 @@ BEGIN
 		RETURN NEW;
    	end if;
 END;$$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER restricao_maior_idade BEFORE INSERT ON usuario_possui_jogo
-    FOR EACH ROW EXECUTE FUNCTION maior_idade_function();					  
+LANGUAGE plpgsql;					  

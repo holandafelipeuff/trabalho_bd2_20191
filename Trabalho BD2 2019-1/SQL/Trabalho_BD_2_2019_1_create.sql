@@ -14,10 +14,12 @@ CREATE TABLE categoria (
 CREATE TABLE comentario (
     id serial  NOT NULL,
     texto varchar(400)  NOT NULL,
+    estrelas int  NOT NULL CHECK (estrelas >= 1 AND estrelas <= 5),
     usuario_id int  NOT NULL,
     jogo_id int  NOT NULL,
     hora timestamp  NOT NULL,
-    CONSTRAINT comentario_pk PRIMARY KEY (id)
+    CONSTRAINT comentario_pk PRIMARY KEY (id),
+    CONSTRAINT comentario_unq_usr_jogo UNIQUE (usuario_id, jogo_id)
 );
 
 -- Table: jogo
