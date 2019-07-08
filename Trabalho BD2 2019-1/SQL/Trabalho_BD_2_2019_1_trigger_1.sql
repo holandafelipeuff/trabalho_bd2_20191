@@ -21,7 +21,7 @@ CREATE OR REPLACE FUNCTION usuario_comenta_jogo_function() RETURNS trigger AS $u
             WHERE usuario_id = NEW.usuario_id
             AND jogo_id = NEW.jogo_id) <= 2 THEN
 
-            RAISE EXCEPTION 'Usuário possui menos de 2 horas jogadas do jogo, então não pode jogar';
+            RAISE EXCEPTION 'Usuário possui menos de 2 horas jogadas do jogo, então não pode comentar';
         END IF;
         
         RETURN NEW;
@@ -30,3 +30,4 @@ $usuario_comenta_jogo_function$ LANGUAGE plpgsql;
 
 CREATE TRIGGER usuario_comenta_jogo BEFORE INSERT ON comentario
     FOR EACH ROW EXECUTE FUNCTION usuario_comenta_jogo_function();
+
