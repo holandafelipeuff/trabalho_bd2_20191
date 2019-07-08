@@ -204,7 +204,7 @@ CREATE OR REPLACE FUNCTION update_jogo_em_promocao_function() RETURNS trigger AS
         IF OLD.promocao_id <> NEW.promocao_id OR OLD.jogo_id <> NEW.jogo_id THEN
             RAISE EXCEPTION 'Jogo e Promoção não podem ser alterados por meio de update';
         END IF;
-    
+        RETURN NEW;
     END;
 $update_jogo_em_promocao_function$ LANGUAGE plpgsql;
 
@@ -279,7 +279,8 @@ CREATE OR REPLACE FUNCTION update_jogo_pertence_categoria_function() RETURNS tri
         IF OLD.categoria_id <> NEW.categoria_id OR OLD.jogo_id <> NEW.jogo_id THEN
             RAISE EXCEPTION 'Jogo e Categoria não podem ser alterados por meio de update';
         END IF;
-    
+
+        RETURN NEW;
     END;
 $update_jogo_pertence_categoria_function$ LANGUAGE plpgsql;
 
