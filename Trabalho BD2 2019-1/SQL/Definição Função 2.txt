@@ -1,0 +1,1 @@
+A função 2 apresenta ao usuário jogos recomendados
