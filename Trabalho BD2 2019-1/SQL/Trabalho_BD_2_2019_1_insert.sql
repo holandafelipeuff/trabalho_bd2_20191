@@ -37,10 +37,6 @@ INSERT INTO promocao(
 	id, nome, porcentagem, inicio, fim)
 	VALUES (2, 'Fim de Ano', 20, '28/12/2019', '02/01/2020');
 
-INSERT INTO jogo_em_promocao(
-	promocao_id, jogo_id)
-	VALUES (1, 1);
-
 
 
 
