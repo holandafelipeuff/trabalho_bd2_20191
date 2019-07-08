@@ -1,0 +1,5 @@
+A definição da restrição 1 é que um usuário não poderá comentar sobre um jogo se:
+
+- Usuário for um usuário negativo
+- Não possuir o jogo
+- Não ter jogado pelo menos 2horas desse jogo

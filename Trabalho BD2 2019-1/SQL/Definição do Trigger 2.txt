@@ -1,0 +1,1 @@
+Uma promoção, caso seja uma promoção que é aplicada a uma categoria inteira, ao ser adicionado uma nova promoção de categoria, deverá ser checado se a promoção está no período vigente (já que a mesma tem data de início e fim) e caso esteja, todos os jogos da categoria deveram ter o seu valor modificado pela promoção em questão

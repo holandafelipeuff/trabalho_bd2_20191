@@ -1,0 +1,1 @@
+Essa restrição faz com que um usuário menor de idade não possa comprar um jogo onde esse jogo pertence a alguma categoria que seja somente para maiores de idade
