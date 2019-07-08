@@ -1,1 +1,12 @@
-Uma promoÁ„o, caso seja uma promoÁ„o que È aplicada a uma categoria inteira, ao ser adicionado uma nova promoÁ„o de categoria, dever· ser checado se a promoÁ„o est· no perÌodo vigente (j· que a mesma tem data de inÌcio e fim) e caso esteja, todos os jogos da categoria deveram ter o seu valor modificado pela promoÁ„o em quest„o
+Uma promo√ß√£oo, caso seja uma promo√ß√£oo que √© aplicada a uma categoria inteira, 
+ao ser adicionado uma nova promo√ß√£oo de categoria, dever√° ser checado se a promo√ß√£oo 
+est√° no per√≠odo vigente (j√° que a mesma tem data de in√≠cio e fim) e caso esteja,
+todos os jogos da categoria deveram ter o seu valor modificado pela promo√ß√£oo em quest√£o
+
+Essa restri√ß√£o afeta a tabela:
+
+- promo√ß√£o
+- jogo_em_promo√ß√£o
+- jogo
+- categoria
+- jogo_pertence_categoria

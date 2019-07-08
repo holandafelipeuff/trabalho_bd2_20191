@@ -2,6 +2,7 @@ INSERT INTO usuario(id, nome, cpf, email, senha, data_nascimento, usuario_negati
 INSERT INTO usuario(id, nome, cpf, email, senha, data_nascimento, usuario_negativo) VALUES(2, 'Joao', '1234', 'joao@joao.br', '2345', '13/8/1995', false);
 INSERT INTO usuario(id, nome, cpf, email, senha, data_nascimento, usuario_negativo) VALUES(3, 'Carlitos', '12345', 'carlitos@carlitos.br', '23456', '27/11/1997', true);
 INSERT INTO usuario(id, nome, cpf, email, senha, data_nascimento, usuario_negativo) VALUES(4, 'Holandes', '12345', 'a@a.br', '23456', '27/11/1997', false);
+INSERT INTO usuario(id, nome, cpf, email, senha, data_nascimento, usuario_negativo) VALUES(5, 'Messi não tem copa', '12345', 'a@a.br', '23456', '01/01/2015', false);
 
 INSERT INTO categoria(id, nome, precisa_ser_maior_idade) VALUES(1, 'Multiplayer', false);
 INSERT INTO categoria(id, nome, precisa_ser_maior_idade) VALUES(2, 'Tiro', false);
@@ -26,7 +27,7 @@ INSERT INTO usuario_horas_jogo(qtd_horas_jogadas, usuario_id, jogo_id) VALUES (1
 INSERT INTO usuario_horas_jogo(qtd_horas_jogadas, usuario_id, jogo_id) VALUES (50, 2, 3);
 INSERT INTO usuario_horas_jogo(qtd_horas_jogadas, usuario_id, jogo_id) VALUES (1, 2, 2);
 
-INSERT INTO comentario(id, texto, estrelas, usuario_id, jogo_id, hora)VALUES (3, 'Bom', 4, 2, 3, '2019-04-11T10:13:46');
+INSERT INTO comentario(id, texto, estrelas, usuario_id, jogo_id, hora)VALUES (2, 'Esse jogo está uma porra', 4, 2, 3, '2019-04-11T10:13:46');
 
 INSERT INTO promocao(
 	id, nome, porcentagem, inicio, fim)

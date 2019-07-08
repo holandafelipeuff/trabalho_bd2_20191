@@ -1,5 +1,11 @@
-A definiÁ„o da restriÁ„o 1 È que um usu·rio n„o poder· comentar sobre um jogo se:
+A defini√ß√£o da restri√ß√£o 1 √© que um usu√°rio n√£o poder√° comentar sobre um jogo se:
 
-- Usu·rio for um usu·rio negativo
-- N„o possuir o jogo
-- N„o ter jogado pelo menos 2horas desse jogo
+- Usu√°rio for um usu√°rio negativo
+- N√£o possuir o jogo
+- N√£o ter jogado pelo menos 2horas desse jogo
+
+Essa restri√ß√£o afeta a tabela:
+
+- usuario
+- usuario_possui_jogo
+- usuario_horas_jogo

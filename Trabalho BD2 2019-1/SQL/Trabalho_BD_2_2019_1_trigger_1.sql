@@ -1,6 +1,10 @@
 --- -----------------------------------------------------------------------------------
 --- Ao criar um comentário, ele deve seguir algumas restrições em relação ao usuário e jogo
 
+--- INSERT INTO comentario(id, texto, estrelas, usuario_id, jogo_id, hora)
+--- VALUES (3, 'Preferia ver o filme do Pelé', 4, 4, 3, '2019-04-11T10:13:46');
+
+
 CREATE OR REPLACE FUNCTION usuario_comenta_jogo_function() RETURNS trigger AS $usuario_comenta_jogo_function$
     BEGIN
         IF (SELECT usuario_negativo 
@@ -40,10 +44,6 @@ CREATE TRIGGER usuario_comenta_jogo BEFORE INSERT ON comentario
 
 --- update comentario
 --- set usuario_id = 1
---- where id = 3
-
---- update comentario
---- set usuario_id = 4
 --- where id = 3
 
 CREATE OR REPLACE FUNCTION update_usuario_comenta_jogo_function() RETURNS trigger AS $update_usuario_comenta_jogo_function$
@@ -86,7 +86,7 @@ CREATE TRIGGER update_usuario_comenta_jogo BEFORE UPDATE ON comentario
 CREATE OR REPLACE FUNCTION update_usuario_para_negativo_function() RETURNS trigger AS $update_usuario_para_negativo_function$
     BEGIN
         IF (OLD.usuario_negativo <> NEW.usuario_negativo AND NEW.usuario_negativo = true) THEN 
-            DELETE FROM comentario WHERE usuario_id = NEW.usuario;
+            DELETE FROM comentario WHERE usuario_id = NEW.usuario_id;
         END IF;
 
         RETURN NEW;

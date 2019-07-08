@@ -1,5 +1,7 @@
 --- -----------------------------------------------------------------------
 
+--- INSERT INTO usuario_possui_jogo(preco_comprado, data_compra, usuario_id, jogo_id) VALUES (12, '25/3/2019', 5, 2);
+
 --- insert em usuario_possui_jogo
 
 create or replace function maior_idade_compra() returns trigger as $$

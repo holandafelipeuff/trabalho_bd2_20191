@@ -3,6 +3,10 @@
 --- Ao inserir uma nova promoção de categoria, todos os jogos daquela categoria deverão ter seu preço atualizado, isso claro
 --- se estiver nos periodo da promoção
 
+--- INSERT INTO promocao(
+---	id, nome, porcentagem, inicio, fim, categoria_id)
+---	VALUES (3, 'Promoção dos aloprados', 10, '06/07/2019', '02/01/2020', 1);
+
 CREATE OR REPLACE FUNCTION promocao_de_categoria_function() RETURNS trigger AS $promocao_de_categoria_function$
     DECLARE
         c1 REFCURSOR;
@@ -158,13 +162,13 @@ CREATE TRIGGER update_promocao_de_categoria BEFORE UPDATE ON promocao
 CREATE OR REPLACE FUNCTION insert_jogo_em_promocao_function() RETURNS trigger AS $insert_jogo_em_promocao_function$
     DECLARE
         dinheiro_desconto money;
-        porcentagem int;
+        porcentagem_promo int;
     BEGIN
 
         IF NOT EXISTS (SELECT *
-                        FROM usuario
-                        WHERE id = NEW.usuario_id) THEN
-            RAISE EXCEPTION 'Usuario não existe';
+                        FROM jogo
+                        WHERE id = NEW.jogo_id) THEN
+            RAISE EXCEPTION 'Jogo não existe';
         END IF;
 
         IF NOT EXISTS (SELECT *
@@ -173,12 +177,12 @@ CREATE OR REPLACE FUNCTION insert_jogo_em_promocao_function() RETURNS trigger AS
             RAISE EXCEPTION 'Promocao não existe';
         END IF;
 
-        porcentagem = (SELECT porcentagem
+        porcentagem_promo = (SELECT porcentagem
                         FROM promocao
                         WHERE id = NEW.promocao_id);
         
         dinheiro_desconto = (SELECT preco FROM jogo WHERE id = NEW.jogo_id);
-        dinheiro_desconto = dinheiro_desconto * porcentagem;
+        dinheiro_desconto = dinheiro_desconto * porcentagem_promo;
         dinheiro_desconto = dinheiro_desconto / 100;
 
         UPDATE jogo SET preco = preco - dinheiro_desconto WHERE id = NEW.jogo_id;

@@ -1,1 +1,9 @@
-Essa restriÁ„o faz com que um usu·rio menor de idade n„o possa comprar um jogo onde esse jogo pertence a alguma categoria que seja somente para maiores de idade
+Essa restri√ß√£o faz com que um usu√°rio menor de idade n√£o possa comprar um jogo onde esse jogo pertence
+a alguma categoria que seja somente para maiores de idade
+
+Essa restri√ß√£o afeta a tabela:
+
+- usuario
+- categoria
+- jogo_pertence_categoria
+- usuario_possui_jogo
