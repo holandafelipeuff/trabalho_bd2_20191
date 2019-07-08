@@ -1,0 +1,6 @@
+A função 1 define que:
+
+-Se um usuário excrever o palavrão "p*rra"
+-O comentário é removido
+-O jogador é negativado
+
