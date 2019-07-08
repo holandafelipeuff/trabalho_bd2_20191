@@ -41,14 +41,6 @@ INSERT INTO jogo_em_promocao(
 	promocao_id, jogo_id)
 	VALUES (1, 1);
 
-INSERT INTO jogo_em_promocao(
-	promocao_id, jogo_id)
-	VALUES (2, 3);
-
-INSERT INTO jogo_em_promocao(
-	promocao_id, jogo_id)
-	VALUES (1, 3);
-
 
 
 
