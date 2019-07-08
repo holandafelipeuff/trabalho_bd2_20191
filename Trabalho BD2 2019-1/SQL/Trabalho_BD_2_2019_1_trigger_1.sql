@@ -1,5 +1,4 @@
 --- -----------------------------------------------------------------------------------
-
 --- Ao criar um comentário, ele deve seguir algumas restrições em relação ao usuário e jogo
 
 CREATE OR REPLACE FUNCTION usuario_comenta_jogo_function() RETURNS trigger AS $usuario_comenta_jogo_function$
@@ -38,6 +37,14 @@ CREATE TRIGGER usuario_comenta_jogo BEFORE INSERT ON comentario
 
 --- Ao dar update na tabela de comentário, verificar se trocando o usuário, esse usuário
 --- segue as regras e ao trocar o jogo, verificar se o usuário pode comentar sobre aquele jogo
+
+--- update comentario
+--- set usuario_id = 1
+--- where id = 3
+
+--- update comentario
+--- set usuario_id = 4
+--- where id = 3
 
 CREATE OR REPLACE FUNCTION update_usuario_comenta_jogo_function() RETURNS trigger AS $update_usuario_comenta_jogo_function$
     BEGIN
